@@ -1,0 +1,28 @@
+;display string
+
+.MODEL SMALL  ;TINNY, LARGE, EXTRA LARGE
+.STACK 100H   ;STACK MEMORY
+.DATA         ;DATA SEGMENT DB=DEFINE BYTE(SMALL) DW=DEFINE WORD(LARGE)
+NAM DB "SAMIUL KARIM PRODHAN $"
+.CODE
+
+MAIN PROC
+    
+    ;DATA SEGMENT INITIALIZATION
+    MOV AX,@DATA
+    MOV DS,AX 
+     
+    ;displaying name 
+    LEA DX,NAM   ;LEA = load effective address
+    MOV AH,9
+    INT 21H
+    
+
+ 
+     MOV AH,4CH
+     INT 21H
+     MAIN ENDP
+END MAIN
+
+
+
