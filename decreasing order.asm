@@ -10,20 +10,23 @@ main proc
     int 21h
     mov bl,al
     printn
-    print 'Decreasing order: '
+    print 'Decreasing order: ' 
     
-    mov ah,2
-    mov dl,bl
+    sub al,30h 
+    cmp al,0
+    je exit
+    jne l1
     
-    sub bl,30h
-    ;mov ch,0
+    l1:
     mov cx,0
-    mov cl,bl ;6
+    mov cl,al
     
     loop1:
+    mov ah,2
+    mov dl,bl
     int 21h
     print ' '
-    dec dl
+    dec bl
     loop loop1
     
   exit:
