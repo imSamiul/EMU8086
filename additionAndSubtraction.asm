@@ -15,9 +15,9 @@ MAIN PROC
      
      PRINTN " "
      
-     ADD BL,CL
-     MOV AH,2
+     ADD BL,CL 
      SUB BL,30H
+     MOV AH,2
      MOV DL,BL
      INT 21H
      
